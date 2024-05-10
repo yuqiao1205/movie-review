@@ -4,12 +4,19 @@ import Header from '@/components/Header';
 import Providers from './Providers';
 import Navbar from '@/components/Navbar';
 import SearchBox from '@/components/SearchBox';
+import { Suspense } from 'react'
+
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Movie Review',
   description: 'This is a movie database',
+  // icons: [
+  //   {
+  //     href: '/favicon.ico',
+  //   },
+  // ],
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +25,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
           <Header />
-          <Navbar />
+          <Suspense>
+            <Navbar />
+          </Suspense>
           <SearchBox />
           {children}
         </Providers>
