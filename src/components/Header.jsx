@@ -14,7 +14,7 @@ export default function Header() {
       <div className='flex items-center gap-4'>
         <DarkModeSwitch />
         <Link href={'/'} className='flex gap-1 items-center'>
-          <span className='text-2xl font-bold bg-amber-500 py-1 px-2 rounded-lg'>
+          <span className='text-2xl font-bold bg-pink-400 py-1 px-2 rounded-lg hover:bg-pink-300'>
             IMDb
           </span>
           {/* <span className='text-xl hidden sm:inline'>Clone</span> */}

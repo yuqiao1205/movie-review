@@ -12,11 +12,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Movie Review',
   description: 'This is a movie database',
-  // icons: [
-  //   {
-  //     href: '/favicon.ico',
-  //   },
-  // ],
 };
 
 export default function RootLayout({ children }) {
