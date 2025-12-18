@@ -11,18 +11,28 @@ export default function DarkModeSwitch() {
   const currentTheme = theme === 'system' ? systemTheme : theme;
   useEffect(() => setMounted(true), []);
   return (
-    <div>
+    <div className='flex items-center'>
       {mounted &&
         (currentTheme === 'dark' ? (
-          <MdLightMode
+          <button
+            type='button'
             onClick={() => setTheme('light')}
-            className='text-xl cursor-pointer hover:text-amber-500'
-          />
+            className='btn-ghost px-3 py-2'
+            aria-label='Switch to light mode'
+            title='Light mode'
+          >
+            <MdLightMode className='text-xl opacity-90' />
+          </button>
         ) : (
-          <MdDarkMode
+          <button
+            type='button'
             onClick={() => setTheme('dark')}
-            className='text-xl cursor-pointer hover:text-amber-500'
-          />
+            className='btn-ghost px-3 py-2'
+            aria-label='Switch to dark mode'
+            title='Dark mode'
+          >
+            <MdDarkMode className='text-xl opacity-90' />
+          </button>
         ))}
     </div>
   );

@@ -2,32 +2,41 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { FaSearch } from 'react-icons/fa';
 
 export default function SearchBox() {
   const [search, setSearch] = useState('');
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/search/${search}`);
+    if (search.trim()) {
+      router.push(`/search/${search}`);
+    }
   };
   return (
     <form
-      className='flex justify-between px-5 max-w-6xl mx-auto'
+      className='px-4 mt-6'
       onSubmit={handleSubmit}
     >
-      <input
-        type='text'
-        placeholder='Search keywords...'
-        className='w-full h-14 rounded-md placeholder-gray-500 outline-none bg-transparent flex-1'
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <button
-        className='text-amber-600 disabled:text-gray-400'
-        disabled={search === ''}
-      >
-        Search
-      </button>
+      <div className='glass glass-border max-w-3xl mx-auto rounded-3xl p-2 sm:p-3 flex items-center gap-2'>
+        <div className='relative flex-1'>
+          <FaSearch className='absolute left-4 top-1/2 -translate-y-1/2 text-current/70' />
+          <input
+            type='text'
+            placeholder='Search movies, actors, directors…'
+            className='input pl-11 pr-4'
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+        <button
+          type='submit'
+          className='btn-primary px-5'
+          disabled={!search.trim()}
+        >
+          Search
+        </button>
+      </div>
     </form>
   );
 }
