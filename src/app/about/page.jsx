@@ -32,7 +32,7 @@ export default function About() {
             <div className='mt-6 glass glass-border rounded-3xl p-6 text-center'>
               <h2 className='text-xl font-semibold text-current'>Credits</h2>
               <p className='mt-3 text-current/75 leading-relaxed max-w-2xl mx-auto'>
-                This product uses the TMDb API to fetch movie data.
+                This product uses the TMDb API but is not endorsed or certified by TMDb.
               </p>
             </div>
           </div>
@@ -41,4 +41,3 @@ export default function About() {
     </main>
   );
 }
- This product uses the TMDb API but is not endorsed or certified by TMDb.
